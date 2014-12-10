@@ -6,8 +6,8 @@
 </description>
     <link>http://lckamal.github.io/</link>
     <atom:link href="http://lckamal.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 10 Dec 2014 12:16:24 +0545</pubDate>
-    <lastBuildDate>Wed, 10 Dec 2014 12:16:24 +0545</lastBuildDate>
+    <pubDate>Wed, 10 Dec 2014 12:26:09 +0545</pubDate>
+    <lastBuildDate>Wed, 10 Dec 2014 12:26:09 +0545</lastBuildDate>
     <generator>Jekyll v2.5.2</generator>
     
       <item>
@@ -36,13 +36,17 @@
 
 </description>
         <pubDate>Wed, 10 Dec 2014 00:00:00 +0545</pubDate>
-        <link>http://lckamal.github.io/2014/12/10/before-after-slider-with-html5-and-css3.html</link>
-        <guid isPermaLink="true">http://lckamal.github.io/2014/12/10/before-after-slider-with-html5-and-css3.html</guid>
+        <link>http://lckamal.github.io/post/2014/12/10/before-after-slider-with-html5-and-css3.html</link>
+        <guid isPermaLink="true">http://lckamal.github.io/post/2014/12/10/before-after-slider-with-html5-and-css3.html</guid>
         
-        <category>html</category>
+        <category>html5</category>
         
-        <category>css</category>
+        <category>css3</category>
         
+        <category>bx-slider</category>
+        
+        
+        <category>post</category>
         
       </item>
     

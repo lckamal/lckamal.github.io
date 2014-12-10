@@ -1,8 +1,8 @@
 ---
-layout: 
+layout: post
 title: Before after slider with HTML5 and css3
-categories: []
-tags: [html, css]
+categories: [post]
+tags: [html5, css3, bx-slider]
 published: True
 ---
 
