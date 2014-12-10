@@ -6,8 +6,8 @@
 </description>
     <link>http://lckamal.github.io/</link>
     <atom:link href="http://lckamal.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 10 Dec 2014 11:31:53 +0545</pubDate>
-    <lastBuildDate>Wed, 10 Dec 2014 11:31:53 +0545</lastBuildDate>
+    <pubDate>Wed, 10 Dec 2014 12:16:24 +0545</pubDate>
+    <lastBuildDate>Wed, 10 Dec 2014 12:16:24 +0545</lastBuildDate>
     <generator>Jekyll v2.5.2</generator>
     
       <item>
@@ -25,6 +25,24 @@
         
         
         <category>post</category>
+        
+      </item>
+    
+      <item>
+        <title>Before after slider with HTML5 and css3</title>
+        <description>&lt;p&gt;A simple before after slider with HTML5 and css3&lt;/p&gt;
+
+&lt;p&gt;Check out the &lt;a href=&quot;http://lckamal.github.io/before-after&quot;&gt;Before after demo&lt;/a&gt;.&lt;/p&gt;
+
+</description>
+        <pubDate>Wed, 10 Dec 2014 00:00:00 +0545</pubDate>
+        <link>http://lckamal.github.io/2014/12/10/before-after-slider-with-html5-and-css3.html</link>
+        <guid isPermaLink="true">http://lckamal.github.io/2014/12/10/before-after-slider-with-html5-and-css3.html</guid>
+        
+        <category>html</category>
+        
+        <category>css</category>
+        
         
       </item>
     
