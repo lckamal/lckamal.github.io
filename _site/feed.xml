@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>lckamallgithub.com</title>
+    <description>Here I will host some demo sites that I think are worth sharing.
+</description>
+    <link>http://lckamal.github.io/</link>
+    <atom:link href="http://lckamal.github.io/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Wed, 10 Dec 2014 11:31:53 +0545</pubDate>
+    <lastBuildDate>Wed, 10 Dec 2014 11:31:53 +0545</lastBuildDate>
+    <generator>Jekyll v2.5.2</generator>
+    
+      <item>
+        <title>Welcome to lckamal.github.io!</title>
+        <description>&lt;p&gt;Welcome to lckamal.github.io&lt;/p&gt;
+
+&lt;p&gt;Jekyll is a great tool to use for such static websites. I will be posting about github updates and demo sites here.&lt;/p&gt;
+
+&lt;p&gt;Check out the &lt;a href=&quot;http://jekyllrb.com&quot;&gt;Jekyll docs&lt;/a&gt; for more info.&lt;/p&gt;
+
+</description>
+        <pubDate>Wed, 10 Dec 2014 17:02:50 +0545</pubDate>
+        <link>http://lckamal.github.io/post/2014/12/10/welcome-to-lckamal-github.html</link>
+        <guid isPermaLink="true">http://lckamal.github.io/post/2014/12/10/welcome-to-lckamal-github.html</guid>
+        
+        
+        <category>post</category>
+        
+      </item>
+    
+  </channel>
+</rss>
