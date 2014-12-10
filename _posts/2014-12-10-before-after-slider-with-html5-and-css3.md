@@ -4,6 +4,7 @@ title: Before after slider with HTML5 and css3
 categories: [post]
 tags: [html5, css3, bx-slider]
 published: True
+author: Kamal Lamichhane
 ---
 
 A simple before after slider with HTML5 and css3

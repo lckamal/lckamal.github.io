@@ -3,6 +3,7 @@ layout: post
 title:  "Welcome to lckamal.github.io!"
 date:   2014-12-10 11:17:50
 categories: post
+author: Kamal Lamichhane
 ---
 Welcome to lckamal.github.io
 
