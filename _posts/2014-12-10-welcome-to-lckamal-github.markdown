@@ -8,6 +8,6 @@ Welcome to lckamal.github.io
 
 Jekyll is a great tool to use for such static websites. I will be posting about github updates and demo sites here.
 
-Check out the [Jekyll docs][jekyll] for more info.
+Check out [Before after demo][beforeafter].
 
-[jekyll]:      http://jekyllrb.com
+[beforeafter]:      http://lckamal.github.io/before-after
