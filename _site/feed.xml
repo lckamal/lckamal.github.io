@@ -5,9 +5,87 @@
     <description>Here I will host some demo sites that I think are worth sharing.</description>
     <link>http://lckamal.github.io/</link>
     <atom:link href="http://lckamal.github.io/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Fri, 12 Dec 2014 22:42:42 +0545</pubDate>
-    <lastBuildDate>Fri, 12 Dec 2014 22:42:42 +0545</lastBuildDate>
+    <pubDate>Fri, 12 Dec 2014 22:52:11 +0545</pubDate>
+    <lastBuildDate>Fri, 12 Dec 2014 22:52:11 +0545</lastBuildDate>
     <generator>Jekyll v2.5.2</generator>
+    
+      <item>
+        <title>Pyro CMS Addons collection</title>
+        <description>&lt;p&gt;Great collection of pyrocms addons that are useful on day to day development. The good news is; This all are free.
+It can be download fork and contribute anytime to my &lt;a href=&quot;https://github.com/lckamal/PyroAddons&quot;&gt;github repo&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;collection-includes&quot;&gt;Collection Includes:&lt;/h2&gt;
+
+&lt;h3 id=&quot;modules&quot;&gt;Modules&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Calendar&lt;/li&gt;
+  &lt;li&gt;Cron&lt;/li&gt;
+  &lt;li&gt;FAQ&lt;/li&gt;
+  &lt;li&gt;Galleries&lt;/li&gt;
+  &lt;li&gt;Galleries - using streams&lt;/li&gt;
+  &lt;li&gt;Imagepicker&lt;/li&gt;
+  &lt;li&gt;mystream - Manage various streams and fields with simple GUI (different from pyrocms deafult stream module)&lt;/li&gt;
+  &lt;li&gt;News - using streams&lt;/li&gt;
+  &lt;li&gt;Newsletter&lt;/li&gt;
+  &lt;li&gt;Sliders - File folder as a slider&lt;/li&gt;
+  &lt;li&gt;Sliders - using streams and multiple widgets nivo slider as default&lt;/li&gt;
+  &lt;li&gt;Slider - Bootstrap slider&lt;/li&gt;
+  &lt;li&gt;Slider - Flex slider&lt;/li&gt;
+  &lt;li&gt;Testimonials&lt;/li&gt;
+  &lt;li&gt;Choice - Manage choice options from database.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;field-types&quot;&gt;Field Types&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Template&lt;/li&gt;
+  &lt;li&gt;Captcha&lt;/li&gt;
+  &lt;li&gt;Decimal&lt;/li&gt;
+  &lt;li&gt;File_folders&lt;/li&gt;
+  &lt;li&gt;Image crop&lt;/li&gt;
+  &lt;li&gt;Imagepicker / filepicker&lt;/li&gt;
+  &lt;li&gt;Markdown&lt;/li&gt;
+  &lt;li&gt;Multiple&lt;/li&gt;
+  &lt;li&gt;Page&lt;/li&gt;
+  &lt;li&gt;Pyronav&lt;/li&gt;
+  &lt;li&gt;Related&lt;/li&gt;
+  &lt;li&gt;Simple captcha&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;plugins&quot;&gt;Plugins&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;addthis&lt;/li&gt;
+  &lt;li&gt;excerpt&lt;/li&gt;
+  &lt;li&gt;social&lt;/li&gt;
+  &lt;li&gt;tiny&lt;/li&gt;
+  &lt;li&gt;uri&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;widgets&quot;&gt;Widgets&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Image - Display image on website from files module directly&lt;/li&gt;
+  &lt;li&gt;Nivo slider - Nivoslider independent from module and dependent on Files module&lt;/li&gt;
+  &lt;li&gt;Flex Slider - Slider widget from Files module&lt;/li&gt;
+  &lt;li&gt;Child Pages - Display child pages as a widget in grid and accordion format&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;themes&quot;&gt;Themes&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Bootstrap theme&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        <pubDate>Fri, 12 Dec 2014 00:00:00 +0545</pubDate>
+        <link>http://lckamal.github.io/blog/2014/12/12/pyro-cms-addons-collection/</link>
+        <guid isPermaLink="true">http://lckamal.github.io/blog/2014/12/12/pyro-cms-addons-collection/</guid>
+        
+        <category>pyrocms</category>
+        
+        <category>codeigniter</category>
+        
+        
+        <category>blog</category>
+        
+      </item>
     
       <item>
         <title>Advanced module with Fuel CMS</title>
