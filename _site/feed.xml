@@ -5,9 +5,32 @@
     <description>Here I will host some demo sites that I think are worth sharing.</description>
     <link>http://lckamal.github.io/</link>
     <atom:link href="http://lckamal.github.io/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Fri, 12 Dec 2014 22:23:54 +0545</pubDate>
-    <lastBuildDate>Fri, 12 Dec 2014 22:23:54 +0545</lastBuildDate>
+    <pubDate>Fri, 12 Dec 2014 22:42:42 +0545</pubDate>
+    <lastBuildDate>Fri, 12 Dec 2014 22:42:42 +0545</lastBuildDate>
     <generator>Jekyll v2.5.2</generator>
+    
+      <item>
+        <title>Advanced module with Fuel CMS</title>
+        <description>&lt;p&gt;I have written quick and easy guide to make Advanced module on Fuel CMS.
+The tutorial can be found on my &lt;a href=&quot;http://lkamal.com.np/blog/fuel-cms-how-to-make-advanced-module/&quot;&gt;website&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;The source code is hosted at github. You can find it &lt;a href=&quot;https://github.com/lckamal/FUEL-Courses-Module&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+</description>
+        <pubDate>Fri, 12 Dec 2014 00:00:00 +0545</pubDate>
+        <link>http://lckamal.github.io/blog/fuelcms/2014/12/12/advanced-module-with-fuel-cms/</link>
+        <guid isPermaLink="true">http://lckamal.github.io/blog/fuelcms/2014/12/12/advanced-module-with-fuel-cms/</guid>
+        
+        <category>fuelcms</category>
+        
+        <category>tutorial</category>
+        
+        
+        <category>blog</category>
+        
+        <category>fuelcms</category>
+        
+      </item>
     
       <item>
         <title>Welcome to lckamal.github.io!</title>
