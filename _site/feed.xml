@@ -5,8 +5,8 @@
     <description>Here I will host some demo sites that I think are worth sharing.</description>
     <link>http://lckamal.github.io/</link>
     <atom:link href="http://lckamal.github.io/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Fri, 12 Dec 2014 22:52:11 +0545</pubDate>
-    <lastBuildDate>Fri, 12 Dec 2014 22:52:11 +0545</lastBuildDate>
+    <pubDate>Fri, 12 Dec 2014 23:23:19 +0545</pubDate>
+    <lastBuildDate>Fri, 12 Dec 2014 23:23:19 +0545</lastBuildDate>
     <generator>Jekyll v2.5.2</generator>
     
       <item>
@@ -84,6 +84,29 @@ It can be download fork and contribute anytime to my &lt;a href=&quot;https://gi
         
         
         <category>blog</category>
+        
+      </item>
+    
+      <item>
+        <title>Fuel CMS user module for frontend users</title>
+        <description>&lt;p&gt;Fuel cms comes with default admin users but when you are making a website which has user interactions on frontend it’s a little trouble. This module will help you to make common operations like login, register, forgot password and edit profile easier.&lt;/p&gt;
+
+&lt;p&gt;The module uses &lt;a href=&quot;https://github.com/benedmunds/CodeIgniter-Ion-Auth&quot;&gt;Ion Auth 2&lt;/a&gt; (The future of authentication)&lt;/p&gt;
+
+&lt;h2 id=&quot;installation&quot;&gt;Installation&lt;/h2&gt;
+&lt;p&gt;The installation and source can be found on my &lt;a href=&quot;https://github.com/lckamal/fuelcms-user-module&quot;&gt;github repo&lt;/a&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Fri, 12 Dec 2014 00:00:00 +0545</pubDate>
+        <link>http://lckamal.github.io/blog/fuelcms/2014/12/12/fuel-cms-user-module-for-frontend-users/</link>
+        <guid isPermaLink="true">http://lckamal.github.io/blog/fuelcms/2014/12/12/fuel-cms-user-module-for-frontend-users/</guid>
+        
+        <category>fuelcms module</category>
+        
+        
+        <category>blog</category>
+        
+        <category>fuelcms</category>
         
       </item>
     
