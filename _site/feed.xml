@@ -5,9 +5,158 @@
     <description>Here I will host some demo sites that I think are worth sharing.</description>
     <link>http://lckamal.github.io/</link>
     <atom:link href="http://lckamal.github.io/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Fri, 12 Dec 2014 23:23:19 +0545</pubDate>
-    <lastBuildDate>Fri, 12 Dec 2014 23:23:19 +0545</lastBuildDate>
+    <pubDate>Sun, 21 Dec 2014 14:02:47 +0545</pubDate>
+    <lastBuildDate>Sun, 21 Dec 2014 14:02:47 +0545</lastBuildDate>
     <generator>Jekyll v2.5.2</generator>
+    
+      <item>
+        <title>Frontend dependency management with Bower, Gulp and Scss</title>
+        <description>&lt;h2 id=&quot;setting-environment-for-bower-gulp-and-scss&quot;&gt;Setting Environment for Bower, Gulp and Scss&lt;/h2&gt;
+
+&lt;p&gt;The dependency management for front end is like a headache for the first time. I thought someone can save some hair from their head&lt;/p&gt;
+
+&lt;h3 id=&quot;install-node-and-mpm&quot;&gt;Install Node and mpm&lt;/h3&gt;
+&lt;p&gt;You can install Node and npm from http://nodejs.org&lt;/p&gt;
+
+&lt;h3 id=&quot;install-bower&quot;&gt;Install Bower&lt;/h3&gt;
+&lt;p&gt;Bower is a command line utility. Install it with npm.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;$ npm install -g bower&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Bower requires Node and npm and Git.&lt;/p&gt;
+
+&lt;h3 id=&quot;install-bower-1&quot;&gt;Install bower&lt;/h3&gt;
+&lt;p&gt;The first step is to setup Bower. Create a new local directory and “cd” into it. Next run bower init and following the instructions. I don’t believe any of the answers to the questions matter as this will only be used locally.&lt;/p&gt;
+
+&lt;p&gt;After that finishes install our required bower packages:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;bower install bootstrap-sass-official --save  
+bower install fontawesome --save&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;By default this will put them in the bower_components directory which can be changed if you prefer. I will leave it as default.&lt;/p&gt;
+
+&lt;h3 id=&quot;install-gulp-and-its-dependency&quot;&gt;Install Gulp and its dependency&lt;/h3&gt;
+
+&lt;p&gt;Now we need to setup our gulp dependencies, which pull from NPM. Create a new package.json file and just add an empty object, {} and save it.&lt;/p&gt;
+
+&lt;p&gt;Head back to the terminal and install our NPM dependencies:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;npm install gulp gulp-ruby-sass gulp-notify gulp-autoprefixer gulp-bower --save-dev&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;This will install all the needed dependencies in a node_modules folder and also automatically update our package.json file with these dependencies.&lt;/p&gt;
+
+&lt;h3 id=&quot;setting-gulpfilejs&quot;&gt;setting gulpfile.js&lt;/h3&gt;
+
+&lt;p&gt;Finally we need to setup the gulpfile.js. Create this file and we’ll step through all the settings.&lt;/p&gt;
+
+&lt;p&gt;If you’ve looked at gulp files before then you might know they all start by including the dependencies by using the node require function. Here is the start:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;javascript
+var gulp = require(&#39;gulp&#39;),     
+    sass = require(&#39;gulp-ruby-sass&#39;) 
+    autoprefix = require(&#39;gulp-autoprefixer&#39;) 
+    notify = require(&quot;gulp-notify&quot;) 
+    bower = require(&#39;gulp-bower&#39;);
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;These are everything we installed in the NPM step above and at this point just included and not actually doing anything.&lt;/p&gt;
+
+&lt;p&gt;Next up I create a config object to hold various settings:&lt;/p&gt;
+
+&lt;p&gt;```javascript
+var config = {
+     sassPath: ‘./resources/sass’,
+     bowerDir: ‘./bower_components’ 
+}&lt;/p&gt;
+
+&lt;p&gt;var paths = {
+    scss: [config.sassPath + ‘/&lt;strong&gt;.scss’, config.bowerDir + ‘/fontawesome/scss/font-awesome.scss’],
+    font: config.bowerDir + ‘/fontawesome/fonts/&lt;/strong&gt;.&lt;em&gt;’,
+    js: [config.bowerDir + ‘/jquery/dist/**.&lt;/em&gt;’, config.bowerDir + ‘/bootstrap-sass-official/assets/javascripts/bootstrap.js’]
+}
+```&lt;/p&gt;
+
+&lt;h3 id=&quot;gulp-tasks&quot;&gt;Gulp tasks&lt;/h3&gt;
+
+&lt;h4 id=&quot;bower&quot;&gt;Bower:&lt;/h4&gt;
+&lt;p&gt;&lt;code&gt;javascript
+gulp.task(&#39;bower&#39;, function() { 
+    return bower()
+         .pipe(gulp.dest(config.bowerDir)) 
+});
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;font-awesome-icons&quot;&gt;Font awesome icons:&lt;/h4&gt;
+&lt;p&gt;```javascript&lt;/p&gt;
+
+&lt;p&gt;gulp.task(‘icons’, function() { 
+    return gulp.src(paths.font) 
+        .pipe(gulp.dest(‘./public/fonts’)); 
+});
+```&lt;/p&gt;
+
+&lt;h4 id=&quot;sass-on-resources-folder-and-font-awesome&quot;&gt;Sass on /resources folder and font-awesome&lt;/h4&gt;
+
+&lt;p&gt;&lt;code&gt;javascript
+gulp.task(&#39;css&#39;, function() { 
+    return gulp.src(paths.scss)
+         .pipe(sass({
+             style: &#39;compressed&#39;,
+             loadPath: [
+                 &#39;./resources/sass&#39;,
+                 config.bowerDir + &#39;/fontawesome/scss&#39;,
+             ]
+         }) 
+            .on(&quot;error&quot;, notify.onError(function (error) {
+                 return &quot;Error: &quot; + error.message;
+             }))) 
+        .pipe(autoprefix(&#39;last 2 version&#39;))
+         .pipe(gulp.dest(&#39;./public/css&#39;)); 
+});
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;javascripts&quot;&gt;javascripts&lt;/h4&gt;
+
+&lt;p&gt;&lt;code&gt;javascript
+gulp.task(&#39;js&#39;, function() { 
+    return gulp.src(paths.js)
+        .pipe(gulp.dest(&#39;./public/js&#39;)); 
+});
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;watch-and-default-task&quot;&gt;Watch and Default Task&lt;/h3&gt;
+
+&lt;p&gt;```javascript
+gulp.task(‘watch’, function() {
+     gulp.watch(paths.scss, [‘css’]); 
+});&lt;/p&gt;
+
+&lt;p&gt;  gulp.task(‘default’, [‘bower’, ‘icons’, ‘css’, ‘js’]);
+```&lt;/p&gt;
+
+&lt;p&gt;The first is the watch task which just listens for changes in the path and then runs the “css” task. Finally we have a default task which when called runs bower, icons, and the css task. This is useful so contributors can pull down your code, cd into it, run npm install, and finally gulp. Everything should be easily shared and used.&lt;/p&gt;
+
+&lt;p&gt;The final demo is on github. You can get the files from &lt;a href=&quot;https://github.com/lckamal/bower-gulp-scss&quot;&gt;here&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Thanks to &lt;a href=&quot;http://ericlbarnes.com/setting-gulp-bower-bootstrap-sass-fontawesome/&quot;&gt;Eric L. Barnes&lt;/a&gt; for referance.&lt;/p&gt;
+
+</description>
+        <pubDate>Sun, 21 Dec 2014 00:00:00 +0545</pubDate>
+        <link>http://lckamal.github.io/2014/12/21/frontend-dependency-management-with-bower-gulp-and-scss/</link>
+        <guid isPermaLink="true">http://lckamal.github.io/2014/12/21/frontend-dependency-management-with-bower-gulp-and-scss/</guid>
+        
+        <category>bower</category>
+        
+        <category>gulp</category>
+        
+        <category>scss</category>
+        
+        <category>bootstrap</category>
+        
+        <category>font-awesome</category>
+        
+        
+      </item>
     
       <item>
         <title>Pyro CMS Addons collection</title>

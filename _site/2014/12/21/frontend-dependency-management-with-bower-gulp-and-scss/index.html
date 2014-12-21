@@ -8,9 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Here I will host some demo sites that I think are worth sharing.">
 
-    <title>Advanced module with Fuel CMS - LcKamal</title>
+    <title>Frontend dependency management with Bower, Gulp and Scss - LcKamal</title>
 
-    <link rel="canonical" href="http://lckamal.github.io/blog/fuelcms/2014/12/12/advanced-module-with-fuel-cms/">
+    <link rel="canonical" href="http://lckamal.github.io/2014/12/21/frontend-dependency-management-with-bower-gulp-and-scss/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -93,11 +93,11 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="post-heading">
-                    <h1>Advanced module with Fuel CMS</h1>
+                    <h1>Frontend dependency management with Bower, Gulp and Scss</h1>
                     
-                    <h2 class="subheading">Quick and easy guide to make Advanced module on Fuel CMS.</h2>
+                    <h2 class="subheading">The dependency management for front end is like a headache for the first time. I thought someone can save some hair from their head</h2>
                     
-                    <span class="meta">Posted by LcKamal on December 12, 2014</span>
+                    <span class="meta">Posted by  on December 21, 2014</span>
                 </div>
             </div>
         </div>
@@ -110,10 +110,134 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 
-				<p>I have written quick and easy guide to make Advanced module on Fuel CMS.
-The tutorial can be found on my <a href="http://lkamal.com.np/blog/fuel-cms-how-to-make-advanced-module/">website</a></p>
+				<h2 id="setting-environment-for-bower-gulp-and-scss">Setting Environment for Bower, Gulp and Scss</h2>
 
-<p>The source code is hosted at github. You can find it <a href="https://github.com/lckamal/FUEL-Courses-Module">here</a>.</p>
+<p>The dependency management for front end is like a headache for the first time. I thought someone can save some hair from their head</p>
+
+<h3 id="install-node-and-mpm">Install Node and mpm</h3>
+<p>You can install Node and npm from http://nodejs.org</p>
+
+<h3 id="install-bower">Install Bower</h3>
+<p>Bower is a command line utility. Install it with npm.</p>
+
+<p><code>$ npm install -g bower</code></p>
+
+<p>Bower requires Node and npm and Git.</p>
+
+<h3 id="install-bower-1">Install bower</h3>
+<p>The first step is to setup Bower. Create a new local directory and “cd” into it. Next run bower init and following the instructions. I don’t believe any of the answers to the questions matter as this will only be used locally.</p>
+
+<p>After that finishes install our required bower packages:</p>
+
+<p><code>bower install bootstrap-sass-official --save  
+bower install fontawesome --save</code></p>
+
+<p>By default this will put them in the bower_components directory which can be changed if you prefer. I will leave it as default.</p>
+
+<h3 id="install-gulp-and-its-dependency">Install Gulp and its dependency</h3>
+
+<p>Now we need to setup our gulp dependencies, which pull from NPM. Create a new package.json file and just add an empty object, {} and save it.</p>
+
+<p>Head back to the terminal and install our NPM dependencies:</p>
+
+<p><code>npm install gulp gulp-ruby-sass gulp-notify gulp-autoprefixer gulp-bower --save-dev</code></p>
+
+<p>This will install all the needed dependencies in a node_modules folder and also automatically update our package.json file with these dependencies.</p>
+
+<h3 id="setting-gulpfilejs">setting gulpfile.js</h3>
+
+<p>Finally we need to setup the gulpfile.js. Create this file and we’ll step through all the settings.</p>
+
+<p>If you’ve looked at gulp files before then you might know they all start by including the dependencies by using the node require function. Here is the start:</p>
+
+<p><code>javascript
+var gulp = require('gulp'),     
+    sass = require('gulp-ruby-sass') 
+    autoprefix = require('gulp-autoprefixer') 
+    notify = require("gulp-notify") 
+    bower = require('gulp-bower');
+</code></p>
+
+<p>These are everything we installed in the NPM step above and at this point just included and not actually doing anything.</p>
+
+<p>Next up I create a config object to hold various settings:</p>
+
+<p>```javascript
+var config = {
+     sassPath: ‘./resources/sass’,
+     bowerDir: ‘./bower_components’ 
+}</p>
+
+<p>var paths = {
+    scss: [config.sassPath + ‘/<strong>.scss’, config.bowerDir + ‘/fontawesome/scss/font-awesome.scss’],
+    font: config.bowerDir + ‘/fontawesome/fonts/</strong>.<em>’,
+    js: [config.bowerDir + ‘/jquery/dist/**.</em>’, config.bowerDir + ‘/bootstrap-sass-official/assets/javascripts/bootstrap.js’]
+}
+```</p>
+
+<h3 id="gulp-tasks">Gulp tasks</h3>
+
+<h4 id="bower">Bower:</h4>
+<p><code>javascript
+gulp.task('bower', function() { 
+    return bower()
+         .pipe(gulp.dest(config.bowerDir)) 
+});
+</code></p>
+
+<h4 id="font-awesome-icons">Font awesome icons:</h4>
+<p>```javascript</p>
+
+<p>gulp.task(‘icons’, function() { 
+    return gulp.src(paths.font) 
+        .pipe(gulp.dest(‘./public/fonts’)); 
+});
+```</p>
+
+<h4 id="sass-on-resources-folder-and-font-awesome">Sass on /resources folder and font-awesome</h4>
+
+<p><code>javascript
+gulp.task('css', function() { 
+    return gulp.src(paths.scss)
+         .pipe(sass({
+             style: 'compressed',
+             loadPath: [
+                 './resources/sass',
+                 config.bowerDir + '/fontawesome/scss',
+             ]
+         }) 
+            .on("error", notify.onError(function (error) {
+                 return "Error: " + error.message;
+             }))) 
+        .pipe(autoprefix('last 2 version'))
+         .pipe(gulp.dest('./public/css')); 
+});
+</code></p>
+
+<h4 id="javascripts">javascripts</h4>
+
+<p><code>javascript
+gulp.task('js', function() { 
+    return gulp.src(paths.js)
+        .pipe(gulp.dest('./public/js')); 
+});
+</code></p>
+
+<h3 id="watch-and-default-task">Watch and Default Task</h3>
+
+<p>```javascript
+gulp.task(‘watch’, function() {
+     gulp.watch(paths.scss, [‘css’]); 
+});</p>
+
+<p>  gulp.task(‘default’, [‘bower’, ‘icons’, ‘css’, ‘js’]);
+```</p>
+
+<p>The first is the watch task which just listens for changes in the path and then runs the “css” task. Finally we have a default task which when called runs bower, icons, and the css task. This is useful so contributors can pull down your code, cd into it, run npm install, and finally gulp. Everything should be easily shared and used.</p>
+
+<p>The final demo is on github. You can get the files from <a href="https://github.com/lckamal/bower-gulp-scss">here</a></p>
+
+<p>Thanks to <a href="http://ericlbarnes.com/setting-gulp-bower-bootstrap-sass-fontawesome/">Eric L. Barnes</a> for referance.</p>
 
 
 
@@ -122,13 +246,9 @@ The tutorial can be found on my <a href="http://lkamal.com.np/blog/fuel-cms-how-
                 <ul class="pager">
                     
                     <li class="previous">
-                        <a href="http://lckamal.github.io//post/2014/12/10/welcome-to-lckamal-github/" data-toggle="tooltip" data-placement="top" title="Welcome to lckamal.github.io!">&larr; Previous Post</a> 
+                        <a href="http://lckamal.github.io//blog/2014/12/12/pyro-cms-addons-collection/" data-toggle="tooltip" data-placement="top" title="Pyro CMS Addons collection">&larr; Previous Post</a> 
                     </li>
                      
-                    
-                    <li class="next">
-                        <a href="http://lckamal.github.io//blog/fuelcms/2014/12/12/fuel-cms-user-module-for-frontend-users/" data-toggle="tooltip" data-placement="top" title="Fuel CMS user module for frontend users">Next Post &rarr;</a>
-                    </li>
                      
                 </ul>
 
