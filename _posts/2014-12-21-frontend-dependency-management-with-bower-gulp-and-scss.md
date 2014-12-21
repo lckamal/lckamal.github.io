@@ -23,7 +23,7 @@ Bower is a command line utility. Install it with npm.
 
 Bower requires Node and npm and Git.
 
-###Install bower
+###Setup bower
 The first step is to setup Bower. Create a new local directory and init bower following the instructions. I don’t believe any of the answers to the questions matter as this will only be used locally. example:
 
 ```$ mkdir your_project

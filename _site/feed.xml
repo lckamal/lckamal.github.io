@@ -5,8 +5,8 @@
     <description>Here I will host some demo sites that I think are worth sharing.</description>
     <link>http://lckamal.github.io/</link>
     <atom:link href="http://lckamal.github.io/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sun, 21 Dec 2014 14:18:56 +0545</pubDate>
-    <lastBuildDate>Sun, 21 Dec 2014 14:18:56 +0545</lastBuildDate>
+    <pubDate>Sun, 21 Dec 2014 14:21:57 +0545</pubDate>
+    <lastBuildDate>Sun, 21 Dec 2014 14:21:57 +0545</lastBuildDate>
     <generator>Jekyll v2.5.2</generator>
     
       <item>
@@ -25,7 +25,7 @@
 
 &lt;p&gt;Bower requires Node and npm and Git.&lt;/p&gt;
 
-&lt;h3 id=&quot;install-bower-1&quot;&gt;Install bower&lt;/h3&gt;
+&lt;h3 id=&quot;setup-bower&quot;&gt;Setup bower&lt;/h3&gt;
 &lt;p&gt;The first step is to setup Bower. Create a new local directory and init bower following the instructions. I don’t believe any of the answers to the questions matter as this will only be used locally. example:&lt;/p&gt;
 
 &lt;p&gt;&lt;code&gt;$ mkdir your_project
