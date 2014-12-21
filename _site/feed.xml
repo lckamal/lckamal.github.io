@@ -5,8 +5,8 @@
     <description>Here I will host some demo sites that I think are worth sharing.</description>
     <link>http://lckamal.github.io/</link>
     <atom:link href="http://lckamal.github.io/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sun, 21 Dec 2014 14:02:47 +0545</pubDate>
-    <lastBuildDate>Sun, 21 Dec 2014 14:02:47 +0545</lastBuildDate>
+    <pubDate>Sun, 21 Dec 2014 14:18:56 +0545</pubDate>
+    <lastBuildDate>Sun, 21 Dec 2014 14:18:56 +0545</lastBuildDate>
     <generator>Jekyll v2.5.2</generator>
     
       <item>
@@ -15,7 +15,7 @@
 
 &lt;p&gt;The dependency management for front end is like a headache for the first time. I thought someone can save some hair from their head&lt;/p&gt;
 
-&lt;h3 id=&quot;install-node-and-mpm&quot;&gt;Install Node and mpm&lt;/h3&gt;
+&lt;h3 id=&quot;install-node-and-npm&quot;&gt;Install Node and npm&lt;/h3&gt;
 &lt;p&gt;You can install Node and npm from http://nodejs.org&lt;/p&gt;
 
 &lt;h3 id=&quot;install-bower&quot;&gt;Install Bower&lt;/h3&gt;
@@ -26,11 +26,16 @@
 &lt;p&gt;Bower requires Node and npm and Git.&lt;/p&gt;
 
 &lt;h3 id=&quot;install-bower-1&quot;&gt;Install bower&lt;/h3&gt;
-&lt;p&gt;The first step is to setup Bower. Create a new local directory and “cd” into it. Next run bower init and following the instructions. I don’t believe any of the answers to the questions matter as this will only be used locally.&lt;/p&gt;
+&lt;p&gt;The first step is to setup Bower. Create a new local directory and init bower following the instructions. I don’t believe any of the answers to the questions matter as this will only be used locally. example:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;$ mkdir your_project
+$ cd your_project/
+$ bower init
+&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;After that finishes install our required bower packages:&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;bower install bootstrap-sass-official --save  
+&lt;p&gt;&lt;code&gt;$ bower install bootstrap-sass-official --save  
 bower install fontawesome --save&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;By default this will put them in the bower_components directory which can be changed if you prefer. I will leave it as default.&lt;/p&gt;
@@ -41,7 +46,7 @@ bower install fontawesome --save&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;Head back to the terminal and install our NPM dependencies:&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;npm install gulp gulp-ruby-sass gulp-notify gulp-autoprefixer gulp-bower --save-dev&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;$ npm install gulp gulp-ruby-sass gulp-notify gulp-autoprefixer gulp-bower --save-dev&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;This will install all the needed dependencies in a node_modules folder and also automatically update our package.json file with these dependencies.&lt;/p&gt;
 

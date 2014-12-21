@@ -5,6 +5,7 @@ subtitle: The dependency management for front end is like a headache for the fir
 categories: []
 tags: [bower, gulp, scss, bootstrap, font-awesome]
 published: True
+author: Kamal Lamichhane
 
 ---
 
@@ -12,7 +13,7 @@ published: True
 
 The dependency management for front end is like a headache for the first time. I thought someone can save some hair from their head
 
-###Install Node and mpm
+###Install Node and npm
 You can install Node and npm from http://nodejs.org
 
 ###Install Bower
@@ -23,11 +24,16 @@ Bower is a command line utility. Install it with npm.
 Bower requires Node and npm and Git.
 
 ###Install bower
-The first step is to setup Bower. Create a new local directory and “cd” into it. Next run bower init and following the instructions. I don’t believe any of the answers to the questions matter as this will only be used locally.
+The first step is to setup Bower. Create a new local directory and init bower following the instructions. I don’t believe any of the answers to the questions matter as this will only be used locally. example:
+
+```$ mkdir your_project
+$ cd your_project/
+$ bower init
+```
 
 After that finishes install our required bower packages:
 
-```bower install bootstrap-sass-official --save  
+```$ bower install bootstrap-sass-official --save  
 bower install fontawesome --save```
 
 By default this will put them in the bower_components directory which can be changed if you prefer. I will leave it as default.
@@ -38,7 +44,7 @@ Now we need to setup our gulp dependencies, which pull from NPM. Create a new pa
 
 Head back to the terminal and install our NPM dependencies:
 
-```npm install gulp gulp-ruby-sass gulp-notify gulp-autoprefixer gulp-bower --save-dev```
+```$ npm install gulp gulp-ruby-sass gulp-notify gulp-autoprefixer gulp-bower --save-dev```
 
 This will install all the needed dependencies in a node_modules folder and also automatically update our package.json file with these dependencies.
 
