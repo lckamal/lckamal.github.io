@@ -19,22 +19,29 @@ You can install Node and npm from http://nodejs.org
 ###Install Bower
 Bower is a command line utility. Install it with npm.
 
-```$ npm install -g bower```
+```
+$ npm install -g bower
+```
 
 Bower requires Node and npm and Git.
 
 ###Setup bower
-The first step is to setup Bower. Create a new local directory and init bower following the instructions. I don’t believe any of the answers to the questions matter as this will only be used locally. example:
+The first step is to setup Bower. Create a new local directory and init bower following the instructions.
 
-```$ mkdir your_project
+```
+$ mkdir your_project
+
 $ cd your_project/
+
 $ bower init
 ```
 
 After that finishes install our required bower packages:
 
-```$ bower install bootstrap-sass-official --save  
-bower install fontawesome --save```
+```
+$ bower install bootstrap-sass-official --save  
+bower install fontawesome --save
+```
 
 By default this will put them in the bower_components directory which can be changed if you prefer. I will leave it as default.
 
@@ -44,7 +51,9 @@ Now we need to setup our gulp dependencies, which pull from NPM. Create a new pa
 
 Head back to the terminal and install our NPM dependencies:
 
-```$ npm install gulp gulp-ruby-sass gulp-notify gulp-autoprefixer gulp-bower --save-dev```
+```
+$ npm install gulp gulp-ruby-sass gulp-notify gulp-autoprefixer gulp-bower --save-dev
+```
 
 This will install all the needed dependencies in a node_modules folder and also automatically update our package.json file with these dependencies.
 
@@ -90,6 +99,7 @@ gulp.task('bower', function() { 
 ```
 
 ####Font awesome icons:
+This task generated fontawesome/icons to public/fonts
 ```javascript
 
 gulp.task('icons', function() { 
@@ -99,17 +109,11 @@ gulp.task('icons', function() { 
 ```
 
 ####Sass on /resources folder and font-awesome
-
+This task publishes scss files to public/css on css format 
 ```javascript
 gulp.task('css', function() { 
     return gulp.src(paths.scss)
-         .pipe(sass({
-             style: 'compressed',
-             loadPath: [
-                 './resources/sass',
-                 config.bowerDir + '/fontawesome/scss',
-             ]
-         }) 
+         .pipe(sass({style: 'compressed'}) 
             .on("error", notify.onError(function (error) {
                  return "Error: " + error.message;
              }))) 
@@ -119,7 +123,7 @@ gulp.task('css', function() { 
 ```
 
 ####javascripts
-
+This task publishes bootstrap.js and jquery.js on public/js folder
 ```javascript
 gulp.task('js', function() { 
     return gulp.src(paths.js)
@@ -139,10 +143,68 @@ gulp.task('watch', function() {
 
 The first is the watch task which just listens for changes in the path and then runs the “css” task. Finally we have a default task which when called runs bower, icons, and the css task. This is useful so contributors can pull down your code, cd into it, run npm install, and finally gulp. Everything should be easily shared and used.
 
+####Final gulp file looks like this
 
-The final demo is on github. You can get the files from [here][github-demoling]
+```javascript
+var gulp = require('gulp'),     
+    sass = require('gulp-ruby-sass') 
+    autoprefix = require('gulp-autoprefixer') 
+    notify = require("gulp-notify") 
+    bower = require('gulp-bower');
 
-Thanks to [Eric L. Barnes][eric-bloglink] for referance.
+var config = {
+     sassPath: './resources/sass',
+     bowerDir: './bower_components' 
+}
 
-[eric-bloglink]: http://ericlbarnes.com/setting-gulp-bower-bootstrap-sass-fontawesome/
-[github-demoling]: https://github.com/lckamal/bower-gulp-scss 
+var paths = {
+    scss: [config.sassPath + '/**.scss', config.bowerDir + '/fontawesome/scss/font-awesome.scss'],
+    font: config.bowerDir + '/fontawesome/fonts/**.*',
+    js: [config.bowerDir + '/jquery/dist/**.*', config.bowerDir + '/bootstrap-sass-official/assets/javascripts/bootstrap.js']
+}
+gulp.task('bower', function() { 
+    return bower()
+         .pipe(gulp.dest(config.bowerDir)) 
+});
+
+gulp.task('icons', function() { 
+    return gulp.src(paths.font) 
+        .pipe(gulp.dest('./public/fonts')); 
+});
+
+gulp.task('css', function() { 
+    return gulp.src(paths.scss)
+         .pipe(sass({
+             style: 'compressed'
+         }) 
+            .on("error", notify.onError(function (error) {
+                 return "Error: " + error.message;
+             }))) 
+        .pipe(autoprefix('last 2 version'))
+         .pipe(gulp.dest('./public/css')); 
+});
+
+gulp.task('js', function() { 
+    return gulp.src(paths.js)
+        .pipe(gulp.dest('./public/js')); 
+});
+
+// Rerun the task when a file changes
+ gulp.task('watch', function() {
+     gulp.watch(paths.scss, ['css']); 
+});
+
+  gulp.task('default', ['bower', 'icons', 'css', 'js']);
+```
+
+The final demo is on github. You can get the files from [here][github-demolink]
+
+You can visit documentation section of each tools I have used from their official sites:
+- [Bower][bowersite-link]
+- [Gulp][gulpsite-link]
+- [Scss][scsssite-link]
+
+[bowersite-link]: http://bower.io/
+[gulpsite-link]: http://www.gulpjs.com/
+[scsssite-link]: http://sasscss.org/
+[github-demolink]: https://github.com/lckamal/bower-gulp-scss 
