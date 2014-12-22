@@ -92,6 +92,7 @@ var paths = {
 
 ####Bower:
 ```javascript
+
 gulp.task('bower', function() { 
     return bower()
          .pipe(gulp.dest(config.bowerDir)) 
@@ -111,6 +112,7 @@ gulp.task('icons', function() { 
 ####Sass on /resources folder and font-awesome
 This task publishes scss files to public/css on css format 
 ```javascript
+
 gulp.task('css', function() { 
     return gulp.src(paths.scss)
          .pipe(sass({style: 'compressed'}) 
@@ -125,6 +127,7 @@ gulp.task('css', function() { 
 ####javascripts
 This task publishes bootstrap.js and jquery.js on public/js folder
 ```javascript
+
 gulp.task('js', function() { 
     return gulp.src(paths.js)
         .pipe(gulp.dest('./public/js')); 
