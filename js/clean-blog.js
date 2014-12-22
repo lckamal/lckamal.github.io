@@ -33,7 +33,7 @@ $(function() {
             $.ajax({
                 url: "http://lkamal.com.np/api/contact.php",
                 type: "POST",
-                dataType: "jsonp",
+                dataType: "json",
                 data: {
                     name: name,
                     phone: phone,
