@@ -101,6 +101,7 @@ gulp.task('bower', function() { 
 
 ####Font awesome icons:
 This task generated fontawesome/icons to public/fonts
+
 ```javascript
 
 gulp.task('icons', function() { 
@@ -111,6 +112,7 @@ gulp.task('icons', function() { 
 
 ####Sass on /resources folder and font-awesome
 This task publishes scss files to public/css on css format 
+
 ```javascript
 
 gulp.task('css', function() { 
@@ -126,6 +128,7 @@ gulp.task('css', function() { 
 
 ####javascripts
 This task publishes bootstrap.js and jquery.js on public/js folder
+
 ```javascript
 
 gulp.task('js', function() { 
