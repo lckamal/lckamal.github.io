@@ -31,7 +31,7 @@ $(function() {
                 firstName = name.split(' ').slice(0, -1).join(' ');
             }
             $.ajax({
-                url: "././mail/contact_me.php",
+                url: "http://lkamal.com.np/api/contact.php",
                 type: "POST",
                 data: {
                     name: name,
